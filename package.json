@@ -9,7 +9,7 @@
     "build:ui" : "npm run build --prefix ui",
     "server" : "nodemon api/server.js",
     "dev" : "concurrently \"npm run ui\" \"npm run server\" ",
-    "start" : "node api/server.js"
+    "start" : "node api.js"
 
   },
   "keywords": [],
