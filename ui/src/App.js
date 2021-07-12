@@ -9,6 +9,8 @@ function App() {
     <div className="App">
       <h1>Welcome to my Blog !!</h1>
       <span>Done Basic setup</span>
+      <Link to="/login"> Go to Login </Link>
+      <Link to="/about"> Go to About </Link>
 
       <Switch>
         <Route path="/about" component={About} />
