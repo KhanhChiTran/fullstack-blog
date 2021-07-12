@@ -14,5 +14,5 @@
 
 ## DEV notes
 
-1 . `git reset <file>` unstage added file 2.
-2 . `git update-ref -d HEAD` uncommit the very first commit
+1. `git reset <file>` unstage added file
+2. `git update-ref -d HEAD` uncommit the very first commit

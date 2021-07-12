@@ -6,8 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ui" : "npm run start --prefix ui",
+    "build:ui" : "npm run build --prefix ui",
     "server" : "nodemon api/server.js",
-    "dev" : "concurrently \"npm run ui\" \"npm run server\" "
+    "dev" : "concurrently \"npm run ui\" \"npm run server\" ",
+    "start" : "concurrently \"npm run build:ui\" \"npm run server\" "
 
   },
   "keywords": [],
