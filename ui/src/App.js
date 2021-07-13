@@ -1,21 +1,20 @@
-import logo from "./logo.svg"
 import "./App.css"
 import { Route, Switch, Link } from "react-router-dom"
 import About from "./pages/about"
 import Login from "./pages/login"
+import { BrowserRouter as Router } from "react-router-dom"
+import Home from "./pages/home"
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to my Blog !!</h1>
-      <span>Done Basic setup</span>
-      <Link to="/login"> Go to Login </Link>
-      <Link to="/about"> Go to About </Link>
-
-      <Switch>
-        <Route path="/about" component={About} />
-        <Route path="/login" component={Login} />
-      </Switch>
+      <Router>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/login" component={Login} />
+        </Switch>
+      </Router>
     </div>
   )
 }
