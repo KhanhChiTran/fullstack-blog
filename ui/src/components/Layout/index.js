@@ -10,7 +10,9 @@ const Layout = ({ children }) => {
     <Container fluid className="layout">
       <Header />
       <Container className="layout-header"></Container>
-      <Container className="layout-main">{children}</Container>
+      <Container bg="light" className="layout-main">
+        {children}
+      </Container>
       <Container className="layout-footer">
         <Footer />
       </Container>

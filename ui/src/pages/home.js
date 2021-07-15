@@ -1,10 +1,11 @@
 import React from "react"
+import HomeCarousel from "../components/Carousel"
 import Layout from "../components/Layout"
 
 const Home = () => {
   return (
     <Layout>
-      <h1>Home Page</h1>
+      <HomeCarousel />
     </Layout>
   )
 }

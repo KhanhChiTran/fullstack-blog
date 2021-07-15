@@ -3,9 +3,12 @@ import Layout from "../components/Layout"
 
 const About = () => {
   return (
-   <Layout>
-     <h1>Hello from About page</h1>
-   </Layout>
+    <Layout>
+      <h3>
+        “Emotions are contagious, and you can impact the emotions of others by
+        sharing how you feel...”{" "}
+      </h3>
+    </Layout>
   )
 }
 
