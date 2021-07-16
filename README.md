@@ -1,5 +1,7 @@
 ## Building a fullstack blog with React Express !!!!
 
+### Command `npm run dev` to start both client and server
+
 ### Dependencies :
 
 1. React

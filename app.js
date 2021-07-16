@@ -1,14 +1,16 @@
-import path from "path"
-import fs from "fs"
+// import path from "path"
+// import fs from "fs"
 
-import React from "react"
-import ReactDOMServer from "react-dom/server.js"
-import express from "express"
-import App from "./ui/src/App.js"
-import "babel-register"
+// import React from "react"
+// import ReactDOMServer from "react-dom/server.js"
+// import App from "./ui/src/App.js"
+// import "babel-register"
+const express = require("express")
+
 const server = express()
 
 server.use(express.static("ui/build"))
+server.use(express.urlencoded({ extended: true }))
 
 // server.get("/", (req, res) => {
 //   const app = ReactDOMServer.renderToString(App)
