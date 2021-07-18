@@ -13,23 +13,23 @@ export default function CardRow() {
       <a href="">
         <h2>Editor's Choices</h2>
       </a>
-      <Row xs={1} md={3} className="g-4 ">
-        <Col>
+      <Row className="g-4 ">
+        <Col xs={12} md={6} lg={4} className="mb-4">
           <BlogCard Img={Img1} Title="If you're truly happy and you know it" />
         </Col>
-        <Col>
+        <Col xs={12} md={6} lg={4} className="mb-4">
           <BlogCard Img={Img2} Title="If you're truly happy and you know it" />
         </Col>
-        <Col>
+        <Col xs={12} md={6} lg={4} className="mb-4">
           <BlogCard Img={Img3} Title="If you're truly happy and you know it" />
         </Col>
         <Col>
           <BlogCard Img={Img4} Title="If you're truly happy and you know it" />
         </Col>
-        <Col sm>
+        <Col xs={12} md={6} lg={4} className="mb-4">
           <BlogCard Img={Img4} Title="If you're truly happy and you know it" />
         </Col>
-        <Col sm>
+        <Col xs={12} md={6} lg={4} className="mb-4">
           <BlogCard Img={Img5} Title="If you're truly happy and you know it" />
           {/* <Image src="holder.js/171x180" thumbnail /> */}
         </Col>

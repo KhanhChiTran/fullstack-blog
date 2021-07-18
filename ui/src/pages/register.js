@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import LogForm from "../components/Form"
+import { Form, Button } from "react-bootstrap"
 
 export default function Register() {
   return (

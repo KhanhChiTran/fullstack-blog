@@ -3,8 +3,8 @@ import { Card, Button } from "react-bootstrap"
 
 export default function BlogCard({ Img, Title }) {
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={Img} />
+    <Card style={{ width: "100%" }}>
+      <Card.Img style={{ height: 250 }} variant="top" src={Img} />
       <Card.Body>
         <Card.Title>{Title}</Card.Title>
         <Card.Text>
@@ -12,7 +12,9 @@ export default function BlogCard({ Img, Title }) {
           deserunt omnis quaerat possimus eaque molestias dolorum voluptatem
           nam...
         </Card.Text>
-        <Button variant="primary">Read more</Button>
+        <Button style={{ width: "100%" }} variant="primary">
+          Read more
+        </Button>
       </Card.Body>
     </Card>
   )
