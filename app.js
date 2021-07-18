@@ -1,27 +1,15 @@
-// import path from "path"
-// import fs from "fs"
-
-// import React from "react"
-// import ReactDOMServer from "react-dom/server.js"
-// import App from "./ui/src/App.js"
-// import "babel-register"
 const express = require("express")
+const mongoose = require("mongoose")
+const db = require("./backend/config/db")
+// const cors = require("cors")
+const app = express()
 
-const server = express()
+// app.use(cors())
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+db.connect()
+// app.get("/login/:user", controller.login)
+// app.post("/register", controller.register)
+// app.post(route, controller)
 
-server.use(express.static("ui/build"))
-server.use(express.urlencoded({ extended: true }))
-
-// server.get("/", (req, res) => {
-//   const app = ReactDOMServer.renderToString(App)
-//   const indexFile = path.resolve("./ui/build/index.html")
-//   fs.readFile(indexFile, "utf8", (err, data) => {
-//     if (err) res.status(500).send("<h1>Something gona wroong</h1>")
-//     res.send(indexFile)
-//   })
-// })
-server.get("*", (req, res) => {
-  res.redirect("/")
-})
-
-server.listen(process.env.PORT || 5000, () => console.log("app is running"))
+app.listen(process.env.PORT || 5000, () => console.log("app is running"))
