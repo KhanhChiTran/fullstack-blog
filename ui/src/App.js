@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import "./App.css"
 import { Route, Switch, Link } from "react-router-dom"
 import About from "./pages/about"
@@ -6,8 +7,18 @@ import Register from "./pages/register"
 import Blog from "./pages/blog"
 import { BrowserRouter as Router } from "react-router-dom"
 import Home from "./pages/home"
+import firebase from "./firebase"
 
 function App() {
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        console.log("USER IS ", user)
+      } else {
+        console.log("NO SUCH USER")
+      }
+    })
+  }, [])
   return (
     <div className="App">
       <Router>
