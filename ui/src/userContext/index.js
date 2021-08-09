@@ -4,10 +4,8 @@ import { userReducers, INITIAL_STATE } from "./userReducers"
 export const UserContext = createContext()
 
 const UserProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(userReducers, INITIAL_STATE)
-
   return (
-    <UserContext.Provider value={[state, dispatch]}>
+    <UserContext.Provider value={useReducer(userReducers, INITIAL_STATE)}>
       {children}
     </UserContext.Provider>
   )

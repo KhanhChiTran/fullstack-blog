@@ -9,15 +9,15 @@ const Login = () => {
   const [password, setPassword] = useState("")
 
   const handleSubmit = e => {
-    e.preventDefault()
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(user => console.log(user))
-      .catch(err => console.log(err))
-    console.log(e)
+    // e.preventDefault()
+    // firebase
+    //   .auth()
+    //   .signInWithEmailAndPassword(email, password)
+    //   .then(user => console.log(user))
+    //   .catch(err => console.log(err))
+    // console.log(e)
   }
-  const handleOnchange = e => {}
+  // const handleOnchange = e => {}
   return (
     <Layout>
       <Form onSubmit={handleSubmit}>

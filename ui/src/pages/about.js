@@ -9,7 +9,7 @@ const About = () => {
       <Container>
         <Figure>
           <Row>
-            <Col>
+            <Col lg={true}>
               {" "}
               <Figure.Image
                 // width={171}
@@ -18,7 +18,7 @@ const About = () => {
                 src={Flower2}
               />
             </Col>
-            <Col>
+            <Col lg={true}>
               <Figure.Caption variant="light">
                 <h3>
                   “Emotions are contagious, and you can impact the emotions of

@@ -23,20 +23,25 @@ export default function Register() {
     const email = registerForm.elements["email"].value
     const password = registerForm.elements["password"].value
     const confirmpassword = registerForm.elements["confirmpassword"].value
-    fetch("http://localhost:5000/register", {
-      method: "POST",
-      headers: {
-        data: JSON.stringify({ username, email, password, confirmpassword }),
-      },
-    })
-    //   .then(a => console.log(a))
-    //   .catch(err => console.log(err))
-    // firebase
-    //   .auth()
-    //   .createUserWithEmailAndPassword(email, password)
-    //   .then(user => console.log(user))
-    //   .catch(err => console.log(err))
-    // console.log(e)
+    if (password === confirmpassword) {
+      fetch("http://localhost:5000/register", {
+        method: "POST",
+        headers: {
+          data: JSON.stringify({ username, email, password, confirmpassword }),
+        },
+      })
+        .then(a => a.json())
+        .then(b => console.log(b))
+        .catch(err => console.log(err))
+      // firebase
+      //   .auth()
+      //   .createUserWithEmailAndPassword(email, password)
+      //   .then(user => console.log(user))
+      //   .catch(err => console.log(err))
+      // console.log(e)
+    } else {
+      throw Error("Confirm password is not correct")
+    }
   }
 
   return (
