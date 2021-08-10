@@ -8,9 +8,9 @@ function Blog() {
   useEffect(() => {
     axios
       .get("http://localhost:5000/get-all-posts")
-      .then(data => console.log(data))
+      .then(res => setAllPosts(res.data.allPosts))
       .catch(err => console.log(err))
-  })
+  }, [])
 
   return (
     <Layout>
