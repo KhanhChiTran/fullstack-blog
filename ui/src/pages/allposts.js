@@ -1,15 +1,13 @@
 import React from "react"
 import HomeCarousel from "../components/Carousel"
 import Layout from "../components/Layout"
-// import CardRow from "../components/Blog"
 
-const Home = () => {
+const AllPosts = () => {
   return (
     <Layout>
-      <HomeCarousel />
-      {/* <CardRow /> */}
+      <h1>This is show all posts</h1>
     </Layout>
   )
 }
 
-export default Home
+export default AllPosts

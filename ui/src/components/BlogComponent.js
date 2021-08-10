@@ -7,7 +7,7 @@ import Img3 from "../images/happydog.jpg"
 import Img4 from "../images/happy3.jpg"
 import Img5 from "../images/happy1.jpg"
 
-export default function CardRow() {
+export default function BlogComponent() {
   return (
     <Container>
       <a href="">

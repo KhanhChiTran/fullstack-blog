@@ -6,16 +6,17 @@ const PostSchema = new Schema(
     title: {
       type: String,
       required: true,
-      unique: true,
     },
-    desc: {
+    content: {
       type: String,
       required: true,
     },
-    username: {
+    author: {
       type: String,
-      require: true,
-      unique: true,
+    },
+    createdAt: {
+      type: Date,
+      default: new Date(),
     },
     categories: { type: Array, required: false },
     bgImg: {

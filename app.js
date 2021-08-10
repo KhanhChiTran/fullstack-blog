@@ -8,8 +8,14 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 db.connect()
-// app.get("/login/:user", controller.login)
+app.post("/login", controller.login)
 app.post("/register", controller.register)
-// app.post(route, controller)
-
+app.post("/create-post", controller.createPost)
+app.get("/get-all-posts", controller.getAllPosts)
 app.listen(process.env.PORT || 5000, () => console.log("app is running"))
+process.on("SIGTERM", () => {
+  debug("SIGTERM signal received: closing HTTP server")
+  server.close(() => {
+    debug("HTTP server closed")
+  })
+})

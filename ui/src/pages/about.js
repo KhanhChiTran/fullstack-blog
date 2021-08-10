@@ -11,12 +11,7 @@ const About = () => {
           <Row>
             <Col lg={true}>
               {" "}
-              <Figure.Image
-                // width={171}
-                // height={180}
-                alt="171x180"
-                src={Flower2}
-              />
+              <Figure.Image alt="171x180" src={Flower2} />
             </Col>
             <Col lg={true}>
               <Figure.Caption variant="light">
@@ -33,7 +28,7 @@ const About = () => {
                 <h3>Sharing your emotions always lead to the best outcomes”</h3>
               </Figure.Caption>
               <Button variant="primary" size="lg">
-                Write your thoughts now
+                <a href="/login"> Write your thoughts now</a>
               </Button>
             </Col>
           </Row>

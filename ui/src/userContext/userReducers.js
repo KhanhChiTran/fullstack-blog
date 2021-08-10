@@ -2,6 +2,7 @@ import { userTypes } from "./userTypes"
 
 export const INITIAL_STATE = {
   currentUser: false,
+  userInfo: null,
 }
 
 export const userReducers = (state, action) => {
@@ -10,6 +11,7 @@ export const userReducers = (state, action) => {
       return {
         ...state,
         currentUser: true,
+        userInfo: { ...action.userInfo },
       }
 
     case userTypes.USER_SIGNUP:
@@ -17,6 +19,14 @@ export const userReducers = (state, action) => {
         ...state,
         currentUser: true,
       }
+
+    case userTypes.USER_LOGOUT: {
+      return {
+        ...state,
+        currentUser: false,
+        userInfo: null,
+      }
+    }
 
     default:
       return state

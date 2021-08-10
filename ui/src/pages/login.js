@@ -1,21 +1,37 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import LogForm from "../components/Form"
 import Layout from "../components/Layout"
 import { Form, Button } from "react-bootstrap"
-import firebase from "../firebase"
-
+import { useHistory } from "react-router-dom"
+import { UserContext } from "../userContext"
+import { userTypes } from "../userContext/userTypes"
 const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-
+  const history = useHistory()
+  const [{ userInfo, currentUser }, dispatch] = useContext(UserContext)
   const handleSubmit = e => {
-    // e.preventDefault()
-    // firebase
-    //   .auth()
-    //   .signInWithEmailAndPassword(email, password)
-    //   .then(user => console.log(user))
-    //   .catch(err => console.log(err))
-    // console.log(e)
+    e.preventDefault()
+    fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: {
+        email,
+        password,
+      },
+    })
+      .then(res => res.json())
+      .then(user => {
+        console.log(user)
+        const { token, userName } = user
+
+        document.cookie = `${user.token}`
+        dispatch({
+          type: userTypes.USER_SIGNIN,
+          userInfo: { userName, email },
+        })
+        history.push("/")
+      })
+      .catch(err => console.log(err))
   }
   // const handleOnchange = e => {}
   return (

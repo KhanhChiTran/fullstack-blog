@@ -1,9 +1,13 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Navbar, Nav, NavDropdown, Container, Badge } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import Git from "../../images/contentGit.gif"
+import { UserContext } from "../../userContext"
+import { userTypes } from "../../userContext/userTypes"
 
 const Header = () => {
+  const [{ userInfo, currentUser }, dispatch] = useContext(UserContext)
+  console.log(userInfo)
   return (
     <Navbar bg="" expand="md">
       <Container>
@@ -40,15 +44,35 @@ const Header = () => {
               </Link>
             </Nav.Item>
 
-            <NavDropdown title="Account" id="basic-nav-dropdown">
-              <NavDropdown.ItemText>
-                <Link to="/login"> Login</Link>
-              </NavDropdown.ItemText>
-              <NavDropdown.ItemText>
-                <Link to="/register"> Sign Up</Link>
-              </NavDropdown.ItemText>
-              <NavDropdown.ItemText></NavDropdown.ItemText>
-            </NavDropdown>
+            {!currentUser ? (
+              <NavDropdown title="Account" id="basic-nav-dropdown">
+                <NavDropdown.ItemText>
+                  <Link to="/login"> Login</Link>
+                </NavDropdown.ItemText>
+                <NavDropdown.ItemText>
+                  <Link to="/register"> Sign Up</Link>
+                </NavDropdown.ItemText>
+                <NavDropdown.ItemText></NavDropdown.ItemText>
+              </NavDropdown>
+            ) : (
+              <NavDropdown title="Account" id="basic-nav-dropdown">
+                <NavDropdown.ItemText>
+                  <Link to="/account/newpost"> Create a Post</Link>
+                </NavDropdown.ItemText>
+                <NavDropdown.ItemText>
+                  <Link to="/account/myposts"> My All Posts </Link>
+                </NavDropdown.ItemText>
+                <NavDropdown.ItemText
+                  onClick={() => {
+                    dispatch({
+                      type: userTypes.USER_LOGOUT,
+                    })
+                  }}
+                >
+                  <Link to="/">Logout</Link>
+                </NavDropdown.ItemText>
+              </NavDropdown>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

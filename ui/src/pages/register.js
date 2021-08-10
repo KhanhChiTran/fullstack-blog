@@ -2,8 +2,7 @@ import React, { useState } from "react"
 import Layout from "../components/Layout"
 import LogForm from "../components/Form"
 import { Form, Button } from "react-bootstrap"
-import firebase from "../firebase"
-
+import axios from "axios"
 export default function Register() {
   const [user, setUser] = useState({
     username: "",
@@ -19,18 +18,21 @@ export default function Register() {
     e.preventDefault()
 
     const registerForm = document.getElementById("form")
-    const username = registerForm.elements["username"].value
+    const userName = registerForm.elements["username"].value
     const email = registerForm.elements["email"].value
     const password = registerForm.elements["password"].value
     const confirmpassword = registerForm.elements["confirmpassword"].value
     if (password === confirmpassword) {
-      fetch("http://localhost:5000/register", {
-        method: "POST",
-        headers: {
-          data: JSON.stringify({ username, email, password, confirmpassword }),
-        },
-      })
-        .then(a => a.json())
+      axios
+        .post("http://localhost:5000/register", {
+          data: {
+            userName,
+            email,
+            password,
+            confirmpassword,
+          },
+        })
+
         .then(b => console.log(b))
         .catch(err => console.log(err))
       // firebase

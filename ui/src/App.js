@@ -8,6 +8,8 @@ import Blog from "./pages/blog"
 import { BrowserRouter as Router } from "react-router-dom"
 import Home from "./pages/home"
 import firebase from "./firebase"
+import NewPost from "./pages/newpost"
+import AllPosts from "./pages/allposts"
 
 function App() {
   useEffect(() => {
@@ -26,6 +28,8 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/blog" component={Blog} />
           <Route path="/login" component={Login} />
+          <Route path="/account/newpost" component={NewPost} />
+          <Route path="/account/myposts" component={AllPosts} />
           <Route path="/register" component={Register} />
           <Route path="/" component={Home} />
         </Switch>
