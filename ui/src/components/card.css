@@ -19,7 +19,7 @@
 .wrap-card img {
   transition: 0.2s ease-in;
   margin: 0 auto;
-  max-width: 350px;
+  /* max-width: 350px; */
   padding: 20px;
 }
 .wrap-card:hover img {
@@ -35,4 +35,7 @@
 }
 .wrap-card:hover button {
   transform: translateY(-150px);
+}
+.card-author {
+  color: rgb(6, 82, 153);
 }

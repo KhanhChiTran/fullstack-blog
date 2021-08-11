@@ -10,6 +10,7 @@ import Home from "./pages/home"
 import firebase from "./firebase"
 import NewPost from "./pages/newpost"
 import AllPosts from "./pages/allposts"
+import PostTemplate from "./pages/post-template"
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/about" component={About} />
+          <Route path="/blog/:id" component={PostTemplate} />
           <Route path="/blog" component={Blog} />
           <Route path="/login" component={Login} />
           <Route path="/account/newpost" component={NewPost} />

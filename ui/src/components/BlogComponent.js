@@ -8,6 +8,7 @@ import Img4 from "../images/happy3.jpg"
 import Img5 from "../images/happy1.jpg"
 
 export default function BlogComponent({ allPosts }) {
+  console.log(allPosts)
   return (
     <Container>
       <a href="">
@@ -16,7 +17,7 @@ export default function BlogComponent({ allPosts }) {
       <Row className="g-4 ">
         {allPosts.map((post, index) => (
           <Col key={index} xs={12} md={6} lg={4} className="mb-4">
-            <BlogCard Img={Img1} title={post.title} content={post.content} />
+            <BlogCard Img={Img1} post={post} />
           </Col>
         ))}
       </Row>

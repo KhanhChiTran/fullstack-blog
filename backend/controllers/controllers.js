@@ -97,7 +97,7 @@ const getAllPosts = async (req, res) => {
   // console.log(decoded)
   try {
     const allPosts = await Post.find()
-    console.log(allPosts)
+    // console.log(allPosts)
 
     res.json({ message: "SUCCESS", allPosts })
   } catch (error) {
